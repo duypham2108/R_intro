@@ -3,7 +3,7 @@ args = commandArgs(trailingOnly=TRUE)
 
 # RMSE function
 RMSE <- function(ground_truth, student_result){
-  d <- c(as.matrix(ground_truth)) - c(as.matrix(ground_truth))
+  d <- c(as.matrix(ground_truth)) - c(as.matrix(student_result))
   mask <- !is.na(d)
   n_valid <- sum(mask)
   rmse <- sqrt(sum(d[mask]^2)/n_valid)
